@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const config = {
   entry: [
@@ -19,12 +20,19 @@ const config = {
         query: {
           presets: [ 'es2015' ]
         }
+      },
+      {
+        test: /.pug/, loader: 'pug-loader'
       }
     ]
   },
   plugins: [
     // new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'client/index.pug'
+    })
   ]
 }
 
