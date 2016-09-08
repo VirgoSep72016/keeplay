@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/VirgoSep72016/keeplay/issues"
   },
-  "homepage": "https://github.com/VirgoSep72016/keeplay#readme"
+  "homepage": "https://github.com/VirgoSep72016/keeplay#readme",
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "webpack": "^1.13.2"
+  }
 }
