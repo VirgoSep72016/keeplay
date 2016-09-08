@@ -22,7 +22,10 @@ const config = {
         }
       },
       {
-        test: /.pug/, loader: 'pug-loader'
+        test: /\.css$/, loader: 'style!css'
+      },
+      {
+        test: /\.pug/, loader: 'pug-loader'
       }
     ]
   },
