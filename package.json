@@ -1,0 +1,20 @@
+{
+  "name": "Keeplay",
+  "version": "1.0.0",
+  "description": "The SEP72016 is a magic feature which makes your dream come true.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VirgoSep72016/keeplay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VirgoSep72016/keeplay/issues"
+  },
+  "homepage": "https://github.com/VirgoSep72016/keeplay#readme"
+}
