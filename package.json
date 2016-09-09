@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clear": "rm -rf build/**",
-    "server": "node ./entry.js",
-    "start": "npm run clear; webpack --progress --color --watch",
+    "start": "npm run clear; node ./entry.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +29,8 @@
     "pug": "^2.0.0-beta6",
     "pug-loader": "^2.3.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2"
   }
 }
