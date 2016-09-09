@@ -2,7 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const webPackMiddleware = 'webpack-hot-middleware/client??reload=true&path=/__webpack_hmr&timeout=20000'
+const webPackMiddleware = 'webpack-hot-middleware/client?reload=true&path=/__webpack_hmr&timeout=20000'
 
 const config = {
   entry: [
