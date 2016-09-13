@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
+const publicPath = 'http://localhost:8080/'
 const webPackMiddleware = 'webpack-hot-middleware/client?reload=true&path=/__webpack_hmr&timeout=20000'
 
 const config = {
@@ -11,7 +11,8 @@ const config = {
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'index.bundle.js'
+    filename: 'index.bundle.js',
+    publicPath: publicPath
   },
   module: {
     loaders: [
@@ -33,16 +34,12 @@ const config = {
     ]
   },
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'client/index.pug'
     }),
-        // Webpack 1.0
     new webpack.optimize.OccurenceOrderPlugin(),
-    // Webpack 2.0 fixed this mispelling
-    // new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ]
