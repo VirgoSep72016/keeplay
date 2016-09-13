@@ -2,10 +2,12 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const publicPath = 'http://localhost:8080/'
+const webPackMiddleware = 'webpack-hot-middleware/client?reload=true&path=/__webpack_hmr&timeout=20000'
 
 const config = {
   entry: [
-    path.resolve(__dirname, 'client/index.js')
+    path.resolve(__dirname, 'client/index.js'),
+    webPackMiddleware
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -36,7 +38,10 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'client/index.pug'
-    })
+    }),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ]
 }
 

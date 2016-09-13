@@ -1,2 +1,10 @@
 const server = require('./server')
-server.run();
+
+const isDev = process.env.NODE_ENV === 'dev'
+
+if (isDev) {
+  server.dev()
+} else {
+  server.run()
+}
+

@@ -6,7 +6,8 @@
   "scripts": {
     "clear": "rm -rf build/**",
     "stop": "pm2 stop process.json; pm2 delete process.json",
-    "start": "npm run clear; npm run stop; pm2 start process.json; pm2 logs entry",
+    "start": "npm run clear; npm run stop; webpack --config webpack.config.js -p & pm2 start process.json; pm2 logs entry",
+    "dev": "npm run clear; cross-env NODE_ENV=dev node ./entry.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +26,7 @@
     "babel-loader": "6.2.5",
     "babel-preset-es2015": "6.14.0",
     "browser-sync": "^2.15.0",
+    "cross-env": "^2.0.1",
     "css-loader": "0.25.0",
     "express": "4.14.0",
     "html-webpack-plugin": "2.22.0",
