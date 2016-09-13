@@ -2,7 +2,7 @@ const express = require('express')
 const server = express()
 
 const webpack = require('webpack')
-const webpackConfig = require('../webpack.config');
+const webpackConfig = require('../webpack.dev.config');
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const compiler = webpack(webpackConfig)
@@ -16,7 +16,7 @@ class Server {
     server.use(express.static('build'))
 
     server.use(webpackDevMiddleware(compiler, {
-      noInfo: false,
+      noInfo: true,
       publicPath: webpackConfig.output.publicPath,
       stats: {
         colors: true
