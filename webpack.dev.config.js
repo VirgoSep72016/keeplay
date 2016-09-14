@@ -26,12 +26,16 @@ const config = {
         }
       },
       {
-        test: /\.css$/, loader: 'style!css'
+        test: /\.sass$/,
+        loaders: ['style', 'css', 'sass']
       },
       {
         test: /\.pug/, loader: 'pug-loader'
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [ path.resolve(__dirname, './client/src/css') ]
   },
   plugins: [
     new webpack.NoErrorsPlugin(),
