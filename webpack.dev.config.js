@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const publicPath = 'http://localhost:8080/'
 const webPackMiddleware = 'webpack-hot-middleware/client?reload=true&path=/__webpack_hmr&timeout=20000'
 
@@ -38,7 +39,7 @@ const config = {
     includePaths: [ path.resolve(__dirname, './client/src/css') ]
   },
   plugins: [
-    new webpack.NoErrorsPlugin(),
+    new DashboardPlugin({ port: 3001 }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'client/index.pug'

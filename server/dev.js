@@ -5,7 +5,9 @@ const webpack = require('webpack')
 const webpackConfig = require('../webpack.dev.config');
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 const compiler = webpack(webpackConfig)
+compiler.apply(new DashboardPlugin())
 
 const browserSync = require('browser-sync').create()
 

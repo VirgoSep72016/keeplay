@@ -7,7 +7,7 @@
     "clear": "rm -rf build/**",
     "stop": "pm2 stop process.json; pm2 delete process.json",
     "start": "npm run clear; npm run stop; webpack --config webpack.config.js -p & pm2 start process.json; pm2 logs entry",
-    "dev": "npm run clear; cross-env nodemon --config nodemon.json ./entry.js",
+    "dev": "npm run clear; cross-env webpack-dashboard -c blue -- nodemon --config nodemon.json ./entry.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -38,6 +38,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "0.13.1",
     "webpack": "1.13.2",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-middleware": "1.6.1",
     "webpack-hot-middleware": "2.12.2"
   }
