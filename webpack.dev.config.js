@@ -8,6 +8,7 @@ const webPackMiddleware = 'webpack-hot-middleware/client?reload=true&path=/__web
 const config = {
   entry: [
     path.resolve(__dirname, 'client/index.js'),
+    path.resolve(__dirname, 'client/src/css/style.sass'),
     webPackMiddleware
   ],
   output: {
