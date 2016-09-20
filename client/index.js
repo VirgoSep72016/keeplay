@@ -1,1 +1,1 @@
-require('./src/css/style.sass')
+document.write('pug pug cute')

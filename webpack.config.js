@@ -3,9 +3,15 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const publicPath = 'http://localhost:8080/'
 
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const sassLoaders = [
+  'css-loader',
+  'sass-loader?indentedSyntax=sass&includePaths[]=' + path.resolve(__dirname, './client/src/css')
+]
+
 const config = {
   entry: [
-    path.resolve(__dirname, 'client/index.js')
+    path.resolve(__dirname, 'client/index.js'), path.resolve(__dirname, 'client/src/css/style.sass')
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -15,7 +21,7 @@ const config = {
   module: {
     loaders: [
       {
-        test: /\.jsx?$/,         // Match both .js and .jsx files
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         include: path.join(__dirname, 'client'),
         loader: 'babel',
@@ -25,18 +31,16 @@ const config = {
       },
       {
         test: /\.sass$/,
-        loaders: ['style', 'css', 'sass']
+        loader: ExtractTextPlugin.extract('style', sassLoaders.join('!'))
       },
       {
         test: /\.pug/, loader: 'pug-loader'
       }
     ]
   },
-  sassLoader: {
-    includePaths: [ path.resolve(__dirname, './client/src/css') ]
-  },
   plugins: [
     new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('style.css'),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'client/index.pug'
