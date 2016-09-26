@@ -1,9 +1,10 @@
 // document.write('ya')
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Home from './js/components/Home'
 
 ReactDOM.render((
-    <h1>pug pug cute!</h1>
+    <Home />
   ),
   document.getElementById('app')
 )
