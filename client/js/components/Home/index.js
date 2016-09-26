@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
+import About from './About'
 
 export default class Home extends Component {
   constructor(props) {
@@ -19,6 +20,10 @@ export default class Home extends Component {
             </span>
           </div>
         </div>
+        <About />
+        <footer className="w3-center w3-dark-grey w3-padding-48 w3-hover-black">
+          <p>by us</p>
+        </footer>
       </div>
     )
   }
