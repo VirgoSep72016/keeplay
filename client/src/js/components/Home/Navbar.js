@@ -10,9 +10,13 @@ export default class Navbar extends Component {
     return (
       <div className="w3-top">
         <ul className="w3-navbar" id="Navbar">
-          <li><a href="#" className="w3-padding-large">HOME</a></li>
+          <li>
+            <a href="#" className="w3-padding-large">HOME</a>
+          </li>
           <li className="w3-hide-small w3-right">
-            <a href="#" className="w3-padding-large"><FaSearch /></a>
+            <a href="#" className="w3-padding-large">
+              <FaSearch />
+            </a>
           </li>
         </ul>
       </div>

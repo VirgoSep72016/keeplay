@@ -14,15 +14,15 @@ export default class Home extends Component {
         <div className="bgimg-1">
           <div className="w3-display-middle homeTitle">
             <span className="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">
-              PUG
+              <span>PUG</span>
               <span className="w3-hide-small"> IS SO </span>
-               CUTE
+              <span>CUTE</span>
             </span>
           </div>
         </div>
         <About />
         <footer className="w3-center w3-dark-grey w3-padding-48 w3-hover-black">
-          <p>by us</p>
+          <p>Present by VirgoSep72016</p>
         </footer>
       </div>
     )
