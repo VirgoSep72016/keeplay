@@ -1,7 +1,7 @@
 // document.write('ya')
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Home from './js/components/Home'
+import Home from './src/js/components/Home'
 
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};

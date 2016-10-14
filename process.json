@@ -2,16 +2,16 @@
   "apps": [
     {
       "name": "entry",
-      "script": "./entry.js"
-//      "watch": [
-//        "server",
-//        "entry.js",
-//        "process.json",
-//        "webpack.config.js"
-//      ],
-//      "watch_options": {
-//        "followSymlinks": false
-//      }
+      "script": "./entry.js",
+        "watch": [
+          "server",
+          "entry.js",
+          "process.json",
+          "webpack.config.js"
+        ],
+      "watch_options": {
+        "followSymlinks": false
+      }
     }
   ]
 }
