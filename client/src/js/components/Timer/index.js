@@ -1,17 +1,15 @@
-import Time from './Time'
-
-const second = 1000
+import { SECOND } from './config'
+import { EventEmitter } from 'events'
 
 const defaultSetting = {
-  times: 8,
-  workoutTime: 20, // second
-  releaxTime: 10 // second
+  goalTimes: 8,
+  workoutTime: 20 * SECOND,
+  restTime: 10 * SECOND
 }
 
-class TabaTimer {
+class Tabatimer {
   constructor() {
     this.setting = Object.assign({}, defaultSetting)
-    this.timer = null
   }
 
   set(options) {
@@ -23,17 +21,17 @@ class TabaTimer {
   }
 
   start() {
-    this.timer = setInterval(() => {
+    const { goalTimes, workoutTime, restTime } = this.setting
+    let times = 0
 
+    this.timer = Interval(() => {
       // hmmmmmmm
-
-
-    }, second)
+    }, SECOND)
   }
 
   stop() {
     clearInterval(this.timer)
-    this.timer = false
+    this.timer = null
     alert('肥宅，訓練就該專心訓練啊，重來吧！')
   }
 }
