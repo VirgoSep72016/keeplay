@@ -44,6 +44,10 @@ export default class Tomato extends Component {
   reset() {}
 
   render() {
+    const m = 10
+    const s = 10
+    const time = `${m}:${s}`
+
     return (
       <div>
         <div className={ cx({ isShow: true }) }>
@@ -57,9 +61,9 @@ export default class Tomato extends Component {
           <input type='text' defaultValue='' />
           <button>OK</button>
         </div>
-        <div className={ cx({ isShow: true } )}>
+        <div className={ cx({ isShow: true }) }>
           <span>Time:</span>
-          <span>10:00</span>
+          <span>{ time }</span>
         </div>
         <div>
           <span>Content, TODO</span>
