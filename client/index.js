@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Home from './src/js/components/Home'
 import { throttle } from 'lodash'
-import Timer from './src/js/components/Timer'
+import timerSwitcher from './src/js/components/Timer'
 
 // Change style of navbar on scroll
 const showNavbar = "w3-card-2 w3-animate-top w3-white w3-navbar"
@@ -18,9 +18,10 @@ function myFunction() {
 }
 
 window.onscroll = throttle(myFunction, 426);
+const Timer = timerSwitcher.get('tomato')
 
 ReactDOM.render((
-    <Home />
+    <Timer />
   ),
   document.getElementById('app')
 )
