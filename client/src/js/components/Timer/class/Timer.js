@@ -2,7 +2,7 @@ import { SECOND } from '../config'
 import clock from './Clock'
 import { EventEmitter } from 'events'
 
-class Timer {
+class Timer extends EventEmitter{
   // TODO:if call setInterval several time.....
   run(endTimestamp) {
     clock.on('change', this.tick, endTimestamp)

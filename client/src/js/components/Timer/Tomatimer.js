@@ -12,6 +12,7 @@ class Tomatimer {
   constructor() {
 
     this.setting = Object.assign({}, defaultSetting)
+    this.run = this.run.bind(this)
   }
 
   set(options) {
@@ -27,11 +28,11 @@ class Tomatimer {
   }
 
   startWork(options = { onTick: () => {}, onTimeUp: () => {} }) {
-    this.run(onTimeUp, onTick, this.setting.workTime)
+    this.run(options.onTimeUp, options.onTick, this.setting.workTime)
   }
 
-  startRest(onTick = () => {}, onTimeUp = () => {}) {
-    this.run(onTimeUp, onTick, this.setting.restTime)
+  startRest(options = { onTick: () => {}, onTimeUp: () => {} }) {
+    this.run(options.onTimeUp, options.onTick, this.setting.restTime)
   }
 
   run(onTimeUp, onTick, goalTime ) {
