@@ -8,11 +8,13 @@ const defaultSetting = {
   restTime: 5 * MINUTE
 }
 
+let _this
+
 class Tomatimer {
   constructor() {
 
     this.setting = Object.assign({}, defaultSetting)
-    this.run = this.run.bind(this)
+    _this = this
   }
 
   set(options) {
@@ -28,11 +30,11 @@ class Tomatimer {
   }
 
   startWork(options = { onTick: () => {}, onTimeUp: () => {} }) {
-    this.run(options.onTimeUp, options.onTick, this.setting.workTime)
+    _this.run(options.onTimeUp, options.onTick, this.setting.workTime)
   }
 
   startRest(options = { onTick: () => {}, onTimeUp: () => {} }) {
-    this.run(options.onTimeUp, options.onTick, this.setting.restTime)
+    _this.run(options.onTimeUp, options.onTick, this.setting.restTime)
   }
 
   run(onTimeUp, onTick, goalTime ) {
@@ -40,8 +42,8 @@ class Tomatimer {
 
     timer.on('time_up', () => {
         onTimeUp()
-        timer.removeListener('tick')
-        timer.removeListener('time_up')
+        timer.removeListener('tick', ()=>{console.log('removeListener-tick')})
+        timer.removeListener('time_up', ()=>{console.log('removeListener-time_up')})
     })
 
     timer.on('tick', onTick)

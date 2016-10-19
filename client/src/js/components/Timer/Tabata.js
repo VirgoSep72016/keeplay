@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import tomatimer from './tomatimer'
+import tomatimer from './Tomatimer'
 
 export default class Tomato extends Component {
   render() {
