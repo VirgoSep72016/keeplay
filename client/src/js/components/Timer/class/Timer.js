@@ -9,7 +9,7 @@ class Timer {
   }
 
   tick(now, endTimestamp) {
-    const live = endTimestamp > now
+    const live = endTimestamp - now
     if (live) {
       this.emit('tick', live)
 

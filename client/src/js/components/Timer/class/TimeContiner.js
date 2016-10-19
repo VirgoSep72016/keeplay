@@ -1,10 +1,6 @@
-class Time {
+class TimeContiner {
   constructor() {
     this.boxs = {}
-  }
-
-  now() {
-    return Date.now()
   }
 
   set(name, timestamp) {
@@ -20,4 +16,4 @@ class Time {
   }
 }
 
-export default new Time()
+export default new TimeContiner()
