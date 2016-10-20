@@ -48,6 +48,10 @@ export default class Tomato extends Component {
     })
   }
 
+  pad(num) {
+    return num < 10 ? '0' + num : num
+  }
+
   startRest() {
     const todos = [].push(this.state.todos)
     const todo = this.refs['todo'].value

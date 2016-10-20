@@ -1,6 +1,6 @@
 const timers = {}
-timers['tabata'] = require('./Tabata').default
-timers['tomato'] = require('./Tomato').default
+timers['tabata'] = require('./Tabatimer').default
+// timers['tomato'] = require('./Tomato').default
 
 export default {
   get(type) {
