@@ -1,17 +1,11 @@
 import { SECOND } from '../config'
 import clock from './Clock'
 import { EventEmitter } from 'events'
-let _this
 
 class Timer extends EventEmitter{
-  constructor() {
-    super()
-    _this = this
-  }
-
   // TODO:if call setInterval several time.....
   run(endTimestamp) {
-    clock.on('change', _this.tick, endTimestamp)
+    clock.on('change', this.tick, endTimestamp)
   }
 
   tick(now, endTimestamp) {
@@ -22,24 +16,23 @@ class Timer extends EventEmitter{
       return
     }
 
-    _this.timeUp()
+    this.timeUp()
   }
 
   timeUp() {
     this.emit('time_up')
-    clock.removeListener('change', _this.tick)
+    clock.removeListener('change', this.tick)
   }
 
   broken() {
     this.removeListener('time_up')
-    clock.removeListener('change', _this.tick)
+    clock.removeListener('change', this.tick)
   }
 }
 
 const timer = new Timer()
 
 export default {
-  on: timer.on,
   run: timer.run,
   timeUp: timer.timeUp,
   broken: timer.broken
