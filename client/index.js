@@ -18,7 +18,7 @@ function myFunction() {
 }
 
 window.onscroll = throttle(myFunction, 426);
-const Timer = timerSwitcher.get('tabata')
+const Timer = timerSwitcher.get('tomato')
 
 ReactDOM.render((
     <Timer />
